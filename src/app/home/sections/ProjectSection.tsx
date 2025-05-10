@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const projects = [
     {
@@ -31,61 +32,69 @@ const projects = [
 
 export default function ProjectSection() {
     return (
-        <section id="projects" className="bg-gradient-to-b from-[#f9fafb] to-[#e0e7ef] dark:from-darkbg dark:to-[#22223b]  px-6">
-            <h2 className="text-3xl md:text-4xl font-bold text-center text-black dark:text-darktext mb-12">
-                Featured <span className="text-primary">Projects</span>
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {projects.map((project, idx) => (
-                    <motion.div
-                        key={project.title}
-                        className="relative bg-white dark:bg-darkbg rounded-2xl shadow-lg overflow-hidden group border border-gray-200 dark:border-gray-700"
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: idx * 0.1 }}
-                        whileHover={{ scale: 1.03, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
-                    >
-                        <div className="h-48 w-full overflow-hidden">
-                            <img
-                                src={project.image}
-                                alt={project.title}
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                draggable={false}
-                            />
-                        </div>
-                        <div className="p-6 flex flex-col gap-2">
-                            <h3 className="text-xl font-semibold text-black dark:text-white mb-1">{project.title}</h3>
-                            <p className="text-gray-600 dark:text-gray-300 text-sm mb-2 line-clamp-3">{project.description}</p>
-                            <div className="flex flex-wrap gap-2 mb-3">
-                                {project.tech.map((t) => (
-                                    <span key={t} className="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded font-medium">
-                                        {t}
-                                    </span>
-                                ))}
+        <section id="projects" className="py-20 bg-white dark:bg-darkbg">
+            <div className="container mx-auto px-4">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-12"
+                >
+                    <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">My Projects</h2>
+                    <p className="text-gray-600 dark:text-gray-300">Some of my recent work</p>
+                </motion.div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {projects.map((project, idx) => (
+                        <motion.div
+                            key={project.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: idx * 0.1 }}
+                            viewport={{ once: true }}
+                            className="bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden"
+                        >
+                            <div className="relative h-48">
+                                <Image
+                                    src={project.image}
+                                    alt={project.title}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
-                            <div className="flex gap-3 mt-auto">
-                                <a
-                                    href={project.demo}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-3 py-1 bg-primary text-white rounded hover:bg-primary/80 transition text-xs font-semibold shadow"
-                                >
-                                    Live Demo
-                                </a>
-                                <a
-                                    href={project.github}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="px-3 py-1 border border-primary text-primary rounded hover:bg-primary hover:text-white transition text-xs font-semibold"
-                                >
-                                    GitHub
-                                </a>
+                            <div className="p-6">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{project.title}</h3>
+                                <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
+                                <div className="flex flex-wrap gap-2 mb-3">
+                                    {project.tech.map((t) => (
+                                        <span key={t} className="px-2 py-0.5 bg-primary/10 text-primary text-xs rounded font-medium">
+                                            {t}
+                                        </span>
+                                    ))}
+                                </div>
+                                <div className="flex gap-3 mt-auto">
+                                    <a
+                                        href={project.demo}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-3 py-1 bg-primary text-white rounded hover:bg-primary/80 transition text-xs font-semibold shadow"
+                                    >
+                                        Live Demo
+                                    </a>
+                                    <a
+                                        href={project.github}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="px-3 py-1 border border-primary text-primary rounded hover:bg-primary hover:text-white transition text-xs font-semibold"
+                                    >
+                                        GitHub
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                        {/* Overlay effect on hover */}
-                        <div className="absolute inset-0 bg-black/10 dark:bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-                    </motion.div>
-                ))}
+                        </motion.div>
+                    ))}
+                </div>
             </div>
         </section>
     );

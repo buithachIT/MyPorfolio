@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const projects = [
     {
@@ -39,11 +40,11 @@ export default function Projects() {
                         whileHover={{ scale: 1.03, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
                     >
                         <div className="h-48 w-full overflow-hidden">
-                            <img
+                            <Image
                                 src={project.image}
                                 alt={project.title}
+                                fill
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                draggable={false}
                             />
                         </div>
                         <div className="p-6 flex flex-col gap-2">

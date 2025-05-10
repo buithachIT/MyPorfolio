@@ -1,20 +1,18 @@
 'use client';
 
-import { Search, Volume2, Rss, Menu, X, Sun, Moon } from 'lucide-react';
+import { Search, Volume2, Rss, Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import LanguageToggle from './LanguageToggle';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useTheme } from 'next-themes';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations';
 
 export default function Navbar() {
     const pathname = usePathname();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { theme } = useTheme();
     const { language } = useLanguage();
     const t = translations[language];
 
@@ -51,10 +49,8 @@ export default function Navbar() {
 
             {/* Icon phải */}
             <div className="flex items-center gap-4 text-black dark:text-white">
-
                 <LanguageToggle />
                 <ThemeToggle />
-
 
                 {/* Mobile menu button */}
                 <button
@@ -78,24 +74,21 @@ export default function Navbar() {
                         <nav className="flex flex-col p-4 space-y-4">
                             <Link
                                 href="/"
-                                className={`text-lg font-medium hover:text-primary transition ${pathname === '/' ? 'text-primary' : 'text-black dark:text-white'
-                                    }`}
+                                className={`text-lg font-medium hover:text-primary transition ${pathname === '/' ? 'text-primary' : 'text-black dark:text-white'}`}
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {t.nav.home}
                             </Link>
                             <Link
                                 href="/projects"
-                                className={`text-lg font-medium hover:text-primary transition ${pathname === '/projects' ? 'text-primary' : 'text-black dark:text-white'
-                                    }`}
+                                className={`text-lg font-medium hover:text-primary transition ${pathname === '/projects' ? 'text-primary' : 'text-black dark:text-white'}`}
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {t.nav.projects}
                             </Link>
                             <Link
                                 href="/contact"
-                                className={`text-lg font-medium hover:text-primary transition ${pathname === '/contact' ? 'text-primary' : 'text-black dark:text-white'
-                                    }`}
+                                className={`text-lg font-medium hover:text-primary transition ${pathname === '/contact' ? 'text-primary' : 'text-black dark:text-white'}`}
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 {t.nav.contact}

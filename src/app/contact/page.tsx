@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Facebook } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 
 export default function ContactPage() {
     return (
@@ -133,14 +133,6 @@ export default function ContactPage() {
                                     className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg hover:bg-primary/10 transition"
                                 >
                                     <Github className="w-6 h-6 text-gray-600 dark:text-gray-300" />
-                                </a>
-                                <a
-                                    href="https://www.facebook.com/3110607TH/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="bg-gray-100 dark:bg-gray-800 p-3 rounded-lg hover:bg-primary/10 transition"
-                                >
-                                    <Facebook className="w-6 h-6 text-gray-600 dark:text-gray-300" />
                                 </a>
                                 <a
                                     href="https://www.linkedin.com/in/b%C3%B9i-c%C3%B4ng-th%E1%BA%A1ch-938497347/"
