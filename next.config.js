@@ -2,7 +2,7 @@
 const nextConfig = {
   output: "standalone",
   images: {
-    domains: ["placehold.co"],
+    domains: ["placehold.co", "raw.githubusercontent.com", "github.com"],
     unoptimized: true,
   },
   async headers() {

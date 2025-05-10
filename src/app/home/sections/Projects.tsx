@@ -2,30 +2,57 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FaGithub } from "react-icons/fa";
+
+const GITHUB_PROFILE = {
+    username: "buithachIT",
+    name: "Bùi Công Thạch",
+    avatar: "./chongcam.png",
+    url: "https://github.com/buithachIT",
+    bio: "Frontend Developer | Coding Enthusiast"
+};
 
 const projects = [
     {
         title: "Personal Portfolio",
-        image: "https://placehold.co/600x400/2563eb/ffffff?text=Portfolio",
+        image: "https://placehold.co/600x400/2563eb/ffffff?text=Portfolio&size=24",
         description: "A modern, animated portfolio website built with Next.js, Tailwind CSS, and Framer Motion.",
         tech: ["Next.js", "Tailwind", "Framer Motion"],
-        demo: "https://github.com/buithachIT/MyPorfolio",
+        demo: "https://my-porfolio-enh7wu2ad-bui-cong-thachs-projects.vercel.app/",
         github: "https://github.com/buithachIT/MyPorfolio"
     },
     {
         title: "Spotify Clone",
-        image: "https://placehold.co/600x400/2563eb/ffffff?text=E-commerce",
-        description: "A full-featured e-commerce platform with shopping cart, payment, and admin dashboard.",
+        image: "https://placehold.co/600x400/2563eb/ffffff?text=ListenToMusic&size=24",
+        description: "A full-featured music streaming platform with manage playlist, user, payment, and admin dashboard.",
         tech: ["React", "Python", "MySQL", "Flask", "HTML", "CSS", "TypeScript", "Tailwind", "Antd Design", "React Router", "React Query"],
-        demo: "https://github.com/buithachIT/ListenToMusicWeb",
         github: "https://github.com/buithachIT/ListenToMusicWeb"
     },
-
 ];
 
 export default function Projects() {
     return (
         <section id="projects" className="min-h-screen bg-gradient-to-b from-[#f9fafb] to-[#e0e7ef] dark:from-darkbg dark:to-[#22223b] py-20 px-6">
+            {/* GitHub Profile Intro */}
+            <div className="flex flex-col items-center mb-10">
+                <Image
+                    src={GITHUB_PROFILE.avatar}
+                    alt={GITHUB_PROFILE.username}
+                    width={80}
+                    height={80}
+                    className="rounded-full border-4 border-primary shadow-lg mb-3"
+                />
+                <div className="text-lg font-semibold text-black dark:text-white">{GITHUB_PROFILE.name} <span className="text-primary">@{GITHUB_PROFILE.username}</span></div>
+                <div className="text-gray-600 dark:text-gray-300 text-sm mb-2">{GITHUB_PROFILE.bio}</div>
+                <a
+                    href={GITHUB_PROFILE.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-1.5 bg-black text-white rounded hover:bg-primary transition text-sm font-medium shadow"
+                >
+                    <FaGithub size={18} /> View GitHub
+                </a>
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold text-center text-black dark:text-darktext mb-12">
                 Featured <span className="text-primary">Projects</span>
             </h2>
@@ -39,12 +66,15 @@ export default function Projects() {
                         transition={{ duration: 0.5, delay: idx * 0.1 }}
                         whileHover={{ scale: 1.03, boxShadow: "0 8px 32px rgba(0,0,0,0.12)" }}
                     >
-                        <div className="h-48 w-full overflow-hidden">
+                        <div className="h-48 w-full overflow-hidden bg-[#2563eb] flex items-center justify-center">
                             <Image
                                 src={project.image}
                                 alt={project.title}
-                                fill
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                width={600}
+                                height={400}
+                                className="object-contain w-full h-full"
+                                draggable={false}
+                                priority={idx === 0}
                             />
                         </div>
                         <div className="p-6 flex flex-col gap-2">

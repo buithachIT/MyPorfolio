@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations';
+import Image from 'next/image';
 
 export default function Navbar() {
     const pathname = usePathname();
@@ -51,7 +52,21 @@ export default function Navbar() {
             <div className="flex items-center gap-4 text-black dark:text-white">
                 <LanguageToggle />
                 <ThemeToggle />
-
+                <a
+                    href="https://www.facebook.com/3110607TH/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                >
+                    <Image
+                        src="/chongcam.png"
+                        alt="Avatar"
+                        width={36}
+                        height={36}
+                        className="rounded-full border-2 border-primary shadow hover:scale-105 transition-transform"
+                        priority
+                    />
+                </a>
                 {/* Mobile menu button */}
                 <button
                     className="md:hidden hover:opacity-80"
