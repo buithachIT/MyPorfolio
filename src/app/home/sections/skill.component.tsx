@@ -27,7 +27,7 @@ export default function SkillsSection() {
                 ].map((skill, index) => (
                     <motion.div
                         key={skill}
-                        className="bg-white dark:bg-darkbg border border-gray-200 dark:border-gray-700 rounded-lg p-4 text-center shadow hover:shadow-lg transition"
+                        className="bg-white dark:bg-darkbg  border border-gray-200  dark:border-darktextSecondary rounded-lg p-4 text-center shadow hover:shadow-lg dark:hover:shadow-darktextSecondary transition"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.05, duration: 0.4 }}

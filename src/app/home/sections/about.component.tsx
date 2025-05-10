@@ -3,41 +3,60 @@
 import Image from "next/image";
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations';
+import { motion } from 'framer-motion';
+import { FaGithub, FaHandshake, FaFacebook } from 'react-icons/fa';
+import { Mail } from 'lucide-react';
 
 export default function AboutSection() {
     const { language } = useLanguage();
     const t = translations[language];
 
     return (
-        <section id="about" className="bg-white dark:bg-darkbg px-6 flex flex-col md:flex-row items-center justify-center z-10 gap-12">
-            {/* Text content */}
-            <div className="md:ml-10 max-w-2xl text-xl text-gray-700 dark:text-gray-200">
-                <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-darktext">
-                    {t.about.title} <span className="text-primary">{t.about.titleHighlight}</span> {t.about.titleEnd}
-                </h2>
-                <p className="mt-6 text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-                    {t.about.description.split('\n\n').map((paragraph, index) => (
-                        <span key={index}>
-                            {paragraph}
-                            {index < t.about.description.split('\n\n').length - 1 && (
-                                <>
-                                    <br /><br />
-                                </>
-                            )}
+        <section id="about" className="relative max-w-4xl mx-auto py-16 px-8 flex flex-col md:flex-row items-center gap-10">
+            {/* Avatar + Info */}
+            <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                className="flex flex-col items-center gap-3"
+            >
+                <Image
+                    src="/image.png"
+                    width={140}
+                    height={140}
+                    alt="Avatar"
+                    className="rounded-full mr-10 border-4 border-primary shadow-lg hover:scale-105 transition-transform"
+                />
+                <h2 className="text-2xl font-bold mt-2 text-dark dark:text-darktext">{t.about.titleHighlight}</h2>
+                <p className="text-primary font-semibold">Frontend Developer</p>
+                <div className="flex gap-3 mt-2">
+                    <a href="mailto:buithach.it@gmail.com" className="text-primary hover:underline"><Mail size={20} /></a>
+                    <a href="https://github.com/buithachIT" target="_blank" className="text-primary hover:underline"><FaGithub size={20} /></a>
+                    <a href="https://www.facebook.com/3110607TH/" target="_blank" className="text-primary hover:underline"><FaFacebook size={20} /></a>
+                </div>
+            </motion.div>
+            {/* Description */}
+            <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="max-w-xl text-lg text-gray-700 dark:text-gray-300"
+            >
+                <p>
+                    {t.about.description.split('\n').map((line, idx) => (
+                        <span key={idx}>
+                            {line}
+                            <br />
                         </span>
                     ))}
                 </p>
-            </div>
-            {/* Image */}
-            <div className="md:mr-10 rounded-3xl border-2 border-gray-300 dark:border-yellow-500">
-                <Image
-                    src="/image.png"
-                    width={300}
-                    height={300}
-                    alt="My avatar"
-                    className="rounded-3xl object-cover"
-                />
-            </div>
+                <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-2 rounded font-medium mt-4">
+                    <FaHandshake />
+                    {language === 'vn'
+                        ? 'Kỹ năng mềm: Giao tiếp tốt, thích kết bạn mới, dễ hòa nhập môi trường mới.'
+                        : 'Soft skills: Good communication, enjoy making new friends, adapt well to new environments.'}
+                </div>
+            </motion.div>
         </section>
     );
 } 

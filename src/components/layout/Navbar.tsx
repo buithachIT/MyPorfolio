@@ -27,7 +27,7 @@ export default function Navbar() {
             </Link>
 
             {/* Menu giữa - Desktop */}
-            <nav className="hidden md:flex gap-6 text-sm font-medium text-black dark:text-white">
+            <nav className="hidden md:flex gap-6 text-md font-medium text-black dark:text-white">
                 <Link
                     href="/"
                     className={`hover:text-primary transition ${pathname === '/' ? 'text-primary' : ''}`}

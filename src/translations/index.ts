@@ -1,23 +1,31 @@
 export const translations = {
   vn: {
+    dark: "#18181b",
+    darktext: "#f4f4f5",
+    darktextSecondary: "#a1a1aa",
     nav: {
       home: "Trang chủ",
       projects: "Dự án",
       contact: "Liên hệ",
     },
     hero: {
-      greeting: "Xin chào mình là",
+      greeting: "Xin chào, mình là",
       role: "Frontend Developer – UI/UX Lover",
       from: "đến từ: SGU",
       skills: "Kỹ năng",
       contact: "Liên hệ",
     },
     about: {
-      title: "Hãy để mình",
-      titleHighlight: "giới thiệu",
-      titleEnd: "bản thân",
-      description:
-        "Mình là Công Thạch, sinh viên năm cuối ngành Công nghệ Thông tin tại SGU.\n\nMình đam mê phát triển Frontend vì nó kết hợp giữa thẩm mỹ và công nghệ. Mình thích khám phá những công nghệ mới và luôn chào đón những dự án thú vị và đầy thách thức.\n\nNgoài ra, mình tự tin vào khả năng nghiên cứu độc lập và không ngại đắm mình vào những lĩnh vực mới trong công việc 😅.",
+      title: "Xin chào, tôi là",
+      titleHighlight: "Bùi Công Thạch",
+      titleEnd: "",
+      description: `Tôi là một lập trình viên Frontend với niềm đam mê xây dựng giao diện web hiện đại, tối ưu trải nghiệm người dùng.
+Có kinh nghiệm với React, Next.js, Tailwind CSS và các công nghệ web mới.
+Luôn học hỏi, sáng tạo và hướng tới sản phẩm chất lượng cao.
+
+Ngoài ra tôi cũng thích kết giao thêm với những người bạn mới, tôi tự tin có thể giao tiếp và có thể hòa nhập tốt với những môi trường mới.
+
+Liên hệ với tôi qua email hoặc các mạng xã hội bên dưới!`,
     },
     skills: {
       title: "Kỹ năng của mình",
@@ -44,8 +52,16 @@ export const translations = {
       success: "Tin nhắn đã được gửi thành công!",
       error: "Có lỗi xảy ra. Vui lòng thử lại sau.",
     },
+    playmusic: {
+      question: "Một chút chill không nè?",
+      play: "Bật nhạc",
+      pause: "Tắt nhạc",
+    },
   },
   en: {
+    dark: "#18181b",
+    darktext: "#f4f4f5",
+    darktextSecondary: "#a1a1aa",
     nav: {
       home: "Home",
       projects: "Projects",
@@ -54,16 +70,21 @@ export const translations = {
     hero: {
       greeting: "Hi, I am",
       role: "Frontend Developer – UI/UX Lover",
-      from: "from: SGU",
+      from: "-come from-: SGU",
       skills: "My Skills",
       contact: "Contact",
     },
     about: {
-      title: "Let me",
-      titleHighlight: "introduce",
-      titleEnd: "myself",
-      description:
-        "I'm Công Thạch, a final-year student majoring in Information Technology at SGU.\n\nI'm passionate about Frontend development because it blends aesthetics and technology. I enjoy exploring new technologies and always welcome exciting and challenging projects.\n\nBesides that, I'm confident in my ability to research independently and never shy away from diving into new fields at work 😅.",
+      title: "Hi, I'm",
+      titleHighlight: "Bui Cong Thach",
+      titleEnd: "",
+      description: `I'm a Frontend Developer passionate about building modern, user-friendly web interfaces.
+Experienced with React, Next.js, Tailwind CSS, and modern web technologies.
+Always learning, creative, and aiming for high-quality products.
+
+I also enjoy making new friends, and I'm confident in my communication skills and ability to adapt well to new environments.
+
+Contact me via email or social networks below!`,
     },
     skills: {
       title: "My Skills",
@@ -89,6 +110,11 @@ export const translations = {
       send: "Send Message",
       success: "Message sent successfully!",
       error: "An error occurred. Please try again later.",
+    },
+    playmusic: {
+      question: "Some relaxing music?",
+      play: "Play music",
+      pause: "Pause music",
     },
   },
 };
