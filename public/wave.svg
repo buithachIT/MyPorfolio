@@ -1,0 +1,8 @@
+ <svg
+    viewBox="0 0 1440 320"
+    preserveAspectRatio="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full h-auto fill-white dark:fill-darkbg transition-colors duration-300"
+  >
+    <path fill={theme === 'dark' ? '#22223b' : '#fff'}  d="M0,240 C360,0 1080,480 1440,240 L1440,320 L0,320 Z" />
+  </svg>
