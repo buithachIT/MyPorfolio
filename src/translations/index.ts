@@ -16,16 +16,16 @@ export const translations = {
       contact: "Liên hệ",
     },
     about: {
-      title: "Xin chào, tôi là",
+      title: "Xin chào, Tôi là",
       titleHighlight: "Bùi Công Thạch",
       titleEnd: "",
-      description: `Tôi là một lập trình viên Frontend với niềm đam mê xây dựng giao diện web hiện đại, tối ưu trải nghiệm người dùng.
-Có kinh nghiệm với React, Next.js, Tailwind CSS và các công nghệ web mới.
-Luôn học hỏi, sáng tạo và hướng tới sản phẩm chất lượng cao.
-
-Ngoài ra tôi cũng thích kết giao thêm với những người bạn mới, tôi tự tin có thể giao tiếp và có thể hòa nhập tốt với những môi trường mới.
-
-Liên hệ với tôi qua email hoặc các mạng xã hội bên dưới!`,
+      description: `Mình là một lập trình viên Frontend với niềm đam mê xây dựng giao diện web hiện đại, tối ưu trải nghiệm người dùng.<br/>
+Mình có kinh nghiệm với React, Next.js, Tailwind CSS và các công nghệ web mới.<br/>
+mình luôn học hỏi, sáng tạo và hướng tới sản phẩm chất lượng cao.<br/>
+<br/>
+Ngoài ra mình cũng thích kết giao thêm với những người bạn mới và mình tự tin có thể giao tiếp và có thể hòa nhập tốt với những môi trường mới.
+<br/><br/>
+Liên hệ với mình qua email hoặc các mạng xã hội bên dưới!`,
     },
     skills: {
       title: "Kỹ năng của mình",
@@ -78,13 +78,13 @@ Liên hệ với tôi qua email hoặc các mạng xã hội bên dưới!`,
       title: "Hi, I'm",
       titleHighlight: "Bui Cong Thach",
       titleEnd: "",
-      description: `I'm a Frontend Developer passionate about building modern, user-friendly web interfaces.
-Experienced with React, Next.js, Tailwind CSS, and modern web technologies.
-Always learning, creative, and aiming for high-quality products.
-
-I also enjoy making new friends, and I'm confident in my communication skills and ability to adapt well to new environments.
-
-Contact me via email or social networks below!`,
+      description: `<strong>I’m </strong>a Frontend Developer passionate about building modern, user-friendly web interfaces.<br/>
+I’m experienced with React, Next.js, Tailwind CSS, and other modern web technologies.<br/>
+Always eager to learn, creative, and committed to delivering high-quality products.<br/>
+<br/>
+I also enjoy making new friends and take pride in my strong communication skills and ability to adapt quickly to new environments.
+<br/><br/>
+<strong>Feel free</strong> to contact me via email or through the social networks below!`,
     },
     skills: {
       title: "My Skills",

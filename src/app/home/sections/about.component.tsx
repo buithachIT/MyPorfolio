@@ -43,18 +43,22 @@ export default function AboutSection() {
                 className="max-w-xl text-lg text-gray-700 dark:text-gray-300"
             >
                 <p>
+
                     {t.about.description.split('\n').map((line, idx) => (
-                        <span key={idx}>
-                            {line}
-                            <br />
-                        </span>
+                        <span key={idx} dangerouslySetInnerHTML={{ __html: line }} />
                     ))}
+
                 </p>
                 <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-2 rounded font-medium mt-4">
-                    <FaHandshake />
-                    {language === 'vn'
-                        ? 'Kỹ năng mềm: Giao tiếp tốt, thích kết bạn mới, dễ hòa nhập môi trường mới.'
-                        : 'Soft skills: Good communication, enjoy making new friends, adapt well to new environments.'}
+                    <span className="flex-shrink-0">
+                        <FaHandshake className="text-base" />
+                    </span>
+                    <span>
+                        <strong>{language === 'vn' ? 'Kỹ năng mềm' : 'Soft skills'}</strong>:{" "}
+                        {language === 'vn'
+                            ? 'Giao tiếp tốt, hòa đồng, thích nghi với môi trường mới.'
+                            : 'Strong communication, sociable, adaptable to new environments.'}
+                    </span>
                 </div>
             </motion.div>
         </section>

@@ -53,7 +53,7 @@ export default function Navbar() {
                 <LanguageToggle />
                 <ThemeToggle />
                 <a
-                    href="https://www.facebook.com/3110607TH/"
+
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
