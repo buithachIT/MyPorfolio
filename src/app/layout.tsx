@@ -4,7 +4,7 @@ import { ThemeProvider } from "next-themes";
 import "../styles/global.css";
 import Navbar from '@/components/layout/Navbar';
 import { LanguageProvider } from "@/contexts/LanguageContext";
-
+import { Analytics } from '@vercel/analytics/next';
 const outfit = Outfit({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
@@ -31,6 +31,7 @@ export default function RootLayout({
           <LanguageProvider>
             <Navbar />
             {children}
+            <Analytics />
           </LanguageProvider>
         </ThemeProvider>
       </body>
